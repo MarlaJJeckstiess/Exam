@@ -1,2 +1,4 @@
+.nextflow*
+.cache/
 *.log
-nextflow.log*
+
