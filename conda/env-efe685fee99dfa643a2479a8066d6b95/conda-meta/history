@@ -1,0 +1,15 @@
+==> 2025-07-11 11:02:34 <==
+# cmd: /opt/homebrew/bin/conda create --yes --quiet --prefix /Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-efe685fee99dfa643a2479a8066d6b95 conda-forge::mafft=7.526
+# conda version: 25.5.1
++conda-forge/osx-arm64::gawk-5.3.1-h8a92848_0
++conda-forge/osx-arm64::gmp-6.3.0-h7bae524_2
++conda-forge/osx-arm64::libasprintf-0.25.1-h493aca8_0
++conda-forge/osx-arm64::libcxx-20.1.8-ha82da77_0
++conda-forge/osx-arm64::libgettextpo-0.25.1-h493aca8_0
++conda-forge/osx-arm64::libiconv-1.18-hfe07756_1
++conda-forge/osx-arm64::libintl-0.25.1-h493aca8_0
++conda-forge/osx-arm64::mafft-7.526-h99b78c6_0
++conda-forge/osx-arm64::mpfr-4.2.1-hb693164_3
++conda-forge/osx-arm64::ncurses-6.5-h5e97a16_3
++conda-forge/osx-arm64::readline-8.2-h1d1bf99_2
+# update specs: ['conda-forge::mafft=7.526']

@@ -1,0 +1,11 @@
+prefix=/Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-efe685fee99dfa643a2479a8066d6b95
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: mpfr
+URL: https://www.mpfr.org/
+Description: C library for multiple-precision floating-point computations
+Version: 4.2.1
+Libs: -L${libdir} -lmpfr -lgmp
+Cflags: -I${includedir}

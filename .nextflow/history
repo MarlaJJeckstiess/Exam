@@ -1,0 +1,5 @@
+2025-07-11 10:53:49	687ms	drunk_faraday	OK	00000000000000000000000000000000	06c15402-37d6-4e8d-b3fb-28b0e39fa813	nextflow run main.nf
+2025-07-11 10:54:24	26.3s	ridiculous_pesquet	ERR	7504c9c5055a882fe4b021567c98cc1f	50eea740-b1b1-4944-9fbd-5db01426d4b4	nextflow run main.nf
+2025-07-11 10:59:57	4.9s	angry_albattani	ERR	34e5e96f566642026727a46b2740a3f5	d1385100-53d5-43cf-a8b6-a7b4bc3e6740	nextflow run main.nf
+2025-07-11 11:01:15	2.9s	ridiculous_shirley	ERR	d562ee6c6bd0d5936420fc5ebfae455c	d8ce2cde-a582-4c22-aff0-ee87b46bef95	nextflow run main.nf
+2025-07-11 11:02:25	16.9s	modest_joliot	OK	d32149cc9708d1e7f7aafb32579c6869	d0632065-5210-4e23-b9ab-d7d12fa4fe0f	nextflow run main.nf

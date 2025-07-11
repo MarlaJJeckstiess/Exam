@@ -1,0 +1,57 @@
+{
+  "build": "h4675bf2_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/bioconda/osx-arm64",
+  "constrains": [],
+  "depends": [
+    "libcxx >=18"
+  ],
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/trimal-1.5.0-h4675bf2_2",
+  "files": [
+    "bin/readal",
+    "bin/statal",
+    "bin/trimal"
+  ],
+  "fn": "trimal-1.5.0-h4675bf2_2.tar.bz2",
+  "license": "GPL-3.0-or-later",
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/trimal-1.5.0-h4675bf2_2",
+    "type": 1
+  },
+  "md5": "898866a3a66f6910675190b7b9fc1b09",
+  "name": "trimal",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/trimal-1.5.0-h4675bf2_2.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/readal",
+        "path_type": "hardlink",
+        "sha256": "3e8c00958f43b8bf30b05aee61d5452206eb7d725afdc547110985ee5dc29d5a",
+        "sha256_in_prefix": "3e8c00958f43b8bf30b05aee61d5452206eb7d725afdc547110985ee5dc29d5a",
+        "size_in_bytes": 273168
+      },
+      {
+        "_path": "bin/statal",
+        "path_type": "hardlink",
+        "sha256": "dcb61cb996193d041c96b92040f7472e40d0e8704fd6dc2ea29db18b73d7c97d",
+        "sha256_in_prefix": "dcb61cb996193d041c96b92040f7472e40d0e8704fd6dc2ea29db18b73d7c97d",
+        "size_in_bytes": 273408
+      },
+      {
+        "_path": "bin/trimal",
+        "path_type": "hardlink",
+        "sha256": "a3b9e1335a7006c1c3462ac26e0bea15e4f5abdb9216526e1c5821bbc0b7d53f",
+        "sha256_in_prefix": "a3b9e1335a7006c1c3462ac26e0bea15e4f5abdb9216526e1c5821bbc0b7d53f",
+        "size_in_bytes": 323184
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "bioconda::trimal=1.5.0",
+  "sha256": "2a1ecbb055b2d9a8b487b5bc00de7136c9592805ba0417b88226f5df82d122ed",
+  "size": 223567,
+  "subdir": "osx-arm64",
+  "timestamp": 1733865229000,
+  "url": "https://conda.anaconda.org/bioconda/osx-arm64/trimal-1.5.0-h4675bf2_2.tar.bz2",
+  "version": "1.5.0"
+}

@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# Public domain notice for all NCBI EDirect scripts is located at:
+# https://www.ncbi.nlm.nih.gov/books/NBK179288/#chapter6.Public_Domain_Notice
+
+# expand-current
+
+pth=$( dirname "$0" )
+
+case "$pth" in
+  /* )
+    ;; # already absolute
+  *  )
+    pth=$(cd "$pth" && pwd)
+    ;;
+esac
+
+case ":$PATH:" in
+  *:"$pth":* )
+    ;;
+  * )
+    PATH="$PATH:$pth"
+    export PATH
+    ;;
+esac
+
+# get path to local folder
+
+osname=$( uname -s | sed -e 's/_NT-.*$/_NT/; s/^MINGW[0-9]*/CYGWIN/' )
+
+GetLocalArchiveFolder() {
+
+  dbs="$1"
+  fld="$2"
+
+  # find selected local archive folder from environment variables or configuration file
+  target=$( rchive -local "$dbs" "$fld" )
+
+  if [ -z "$target" ] || [ "$target" = "" ]
+  then
+    echo "ERROR: Must supply path to local data by setting EDIRECT_LOCAL_ARCHIVE environment variable" >&2
+    exit 1
+  fi
+
+  if [ -n "$osname" ] && [ "$osname" = "CYGWIN_NT" -a -x /bin/cygpath ]
+  then
+    target=$( cygpath -w "$target" )
+  fi
+
+  # remove trailing slash
+  target=${target%/}
+
+  echo "$target"
+}
+
+date
+
+archiveBase=$( GetLocalArchiveFolder "$dbase" "Archive" )
+mergedBase=$( GetLocalArchiveFolder "$dbase" "Merged" )
+currentBase=$( GetLocalArchiveFolder "$dbase" "Current" )
+indexedBase=$( GetLocalArchiveFolder "$dbase" "Indexed" )
+invertedBase=$( GetLocalArchiveFolder "$dbase" "Inverted" )
+
+seconds_start=$(date "+%s")
+echo "Removing Previous Indices"
+cd "${indexedBase}"
+target="${indexedBase}"
+find "$target" -name "*.e2x" -delete
+find "$target" -name "*.e2x.gz" -delete
+cd "${invertedBase}"
+target="${invertedBase}"
+find "$target" -name "*.inv" -delete
+find "$target" -name "*.inv.gz" -delete
+cd "${mergedBase}"
+target="${mergedBase}"
+find "$target" -name "*.mrg" -delete
+find "$target" -name "*.mrg.gz" -delete
+seconds_end=$(date "+%s")
+seconds=$((seconds_end - seconds_start))
+echo "$seconds seconds"
+CLR=$seconds
+
+seconds_start=$(date "+%s")
+echo "Collecting Current PubMed Archive"
+cd "${currentBase}"
+target="${currentBase}"
+if [ \! -f pubmed001.xml ]
+then
+  [ -f pubmed001.xml.gz ] || pm-collect "${archiveBase}" "${currentBase}"
+  echo "Expanding Current PubMed Archive"
+  for fl in *.xml.gz
+  do
+    base=${fl%.xml.gz}
+    echo "$base.xml"
+    gunzip -c "$fl" |
+    xtract -set PubmedArticleSet -index -pattern PubmedArticle > "$target/$base.xml"
+    sleep 1
+    rm "$fl"
+  done
+fi
+seconds_end=$(date "+%s")
+seconds=$((seconds_end - seconds_start))
+echo "$seconds seconds"
+EXP=$seconds
+
+echo ""
+
+echo "EXPAND-CURRENT"
+
+echo "CLR $CLR seconds"
+echo "EXP $EXP seconds"
+
+echo ""
+
+date

@@ -1,0 +1,236 @@
+Seq-entry ::= set {
+  level 1,
+  class nuc-prot,
+  descr {
+    source {
+      org {
+        taxname "Hepatitis delta virus",
+        db {
+          {
+            db "taxon",
+            tag id 12475
+          }
+        },
+        orgname {
+          name virus "Hepatitis delta virus",
+          attrib "specified",
+          mod {
+            {
+              subtype old-name,
+              subname "Hepatitis D virus"
+            }
+          },
+          lineage "Viruses; Ribozyviria; Kolmioviridae; Deltavirus; Deltavirus
+ italiense",
+          gcode 1,
+          div "VRL"
+        }
+      }
+    },
+    pub {
+      pub {
+        gen {
+          serial-number 1
+        },
+        muid 88215010,
+        article {
+          title {
+            name "Molecular cloning of hepatitis delta virus RNA from an
+ infected woodchuck liver: sequence, structure, and applications."
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Kuo",
+                  initials "M.Y."
+                }
+              },
+              {
+                name name {
+                  last "Goldberg",
+                  initials "J."
+                }
+              },
+              {
+                name name {
+                  last "Coates",
+                  initials "L."
+                }
+              },
+              {
+                name name {
+                  last "Mason",
+                  initials "W."
+                }
+              },
+              {
+                name name {
+                  last "Gerin",
+                  initials "J."
+                }
+              },
+              {
+                name name {
+                  last "Taylor",
+                  initials "J."
+                }
+              }
+            },
+            affil str "Fox Chase Cancer Center, Philadelphia, Pennsylvania
+ 19111."
+          },
+          from journal {
+            title {
+              iso-jta "J. Virol.",
+              ml-jta "J Virol",
+              issn "0022-538X",
+              name "Journal of virology."
+            },
+            imp {
+              date std {
+                year 1988,
+                month 6
+              },
+              volume "62",
+              issue "6",
+              pages "1855-1861",
+              language "eng"
+            }
+          },
+          ids {
+            pubmed 3367426,
+            medline 88215010
+          }
+        },
+        pmid 3367426
+      },
+      comment "full staff_review"
+    },
+    comment "Draft entry and computer-readable sequence [1] kindly submitted
+ by J.Taylor 03-MAY-1988",
+    create-date std {
+      year 1993,
+      month 8,
+      day 2
+    },
+    update-date std {
+      year 1988,
+      month 12,
+      day 15
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        genbank {
+          name "HPDGEN",
+          accession "M21012",
+          version 1
+        },
+        gi 329989
+      },
+      descr {
+        title "Hepatitis delta virus RNA, complete genome.",
+        molinfo {
+          biomol genomic
+        },
+        genbank {
+          source "Hepatitis delta virus, (passed in woodchuck), cDNA to RNA,
+ clones T4, Z1, U1, C2, C3, W9, and X7.",
+          keywords {
+            "circular genome",
+            "genome",
+            "single-stranded RNA"
+          },
+          origin "2 bp downstream of HindIII site.",
+          entry-date std {
+            year 1988,
+            month 12,
+            day 15
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol rna,
+        length 1679,
+        topology circular,
+        strand ss,
+        seq-data ncbi2na '5E250BD62628866AA8A3491588AA3B46B0224FA06DA201C75420
+90222B7CA09A188D54419688377A0AA02282BA0800AA6A5D58D62A950DD48DE8891D69582AF8B2
+4748A8A0D47688E24880D17522855F498108A67D89ACA2C214C98CA288E728B2AA216098A28090
+20241AA725AEAEF5955622A862E29F356A81D87CDB553726A1568557D80B85A2AAE7A8116A852E
+894EA395F5639D8F587555542AD95283A6A1547792AD66F535FDF178E9693AD525D767A65A7A90
+4F58AA16D576B0E983A85440DDDC8F58C88362200BA7757C94D62E85E6D75F68E54ADA16628AE8
+8E5396158228082866219017B8BA0159FCF47AAD841DEA8802A68DA7A822CCD73A0357AFD578ED
+495755AD6220AA875A8757923EA86096556A6755D8D45F62AAF44554169A969C77DFD5F776DF5D
+AD05D78BD77DF5D7E78AF7E5D5963279F7DFBDD8A97D7DB6B8D79775FB6B835D5788A5DF58AD68
+B717537AD6F6A577D9AAA25577535F35F7F5883D7F8EF55252A3FDB5DCDF7E2FDF7FB7D68ADDDD
+8BD7707DFDF5A5151E7628DDF775759AF7D761DA169D3769C8A692D74B1DF11FF7B0228879E876
+59589588'H
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "AAA45723",
+          version 1
+        },
+        gi 329990
+      },
+      descr {
+        title "delta antigen [Hepatitis delta virus]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 195,
+        seq-data ncbieaa "MSRSESRKNRGGREEILEQWVAGRKKLEELERDLRKTKKKLKKIEDENPWLG
+NIKGILGKKDKDGEGAPPAKRARTDQMEVDSGPRKRPLRGGFTDKERQDHRRRKALENKKKQLSAGGKNLSKEEEEEL
+RRLTEEDERRERRVAGPPVGGVNPLEGGSRGAPGGGFVPNLQGVPESPFSRTGEGLDIRGNQGFP"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                desc "delta antigen"
+              },
+              location int {
+                from 0,
+                to 194,
+                id gi 329990
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          product whole gi 329990,
+          location int {
+            from 1010,
+            to 1597,
+            strand minus,
+            id gi 329989
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+prefix=/Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-d4a549ab39acddb753524a98395a0550
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include 
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 3.5.1
+Requires: libssl libcrypto

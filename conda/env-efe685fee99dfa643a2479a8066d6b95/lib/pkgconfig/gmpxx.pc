@@ -1,0 +1,12 @@
+prefix=/Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-efe685fee99dfa643a2479a8066d6b95
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: GNU MP C++
+Description: GNU Multiple Precision Arithmetic Library (C++ bindings)
+URL: https://gmplib.org
+Version: 6.3.0
+Requires: gmp
+Cflags: -I${includedir}
+Libs: -L${libdir} -lgmpxx
