@@ -1,4 +1,4 @@
-==> 2025-07-11 11:02:34 <==
+==> 2025-07-11 16:05:50 <==
 # cmd: /opt/homebrew/bin/conda create --yes --quiet --prefix /Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-efe685fee99dfa643a2479a8066d6b95 conda-forge::mafft=7.526
 # conda version: 25.5.1
 +conda-forge/osx-arm64::gawk-5.3.1-h8a92848_0

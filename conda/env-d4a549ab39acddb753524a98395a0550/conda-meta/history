@@ -1,4 +1,4 @@
-==> 2025-07-11 10:54:47 <==
+==> 2025-07-11 16:05:41 <==
 # cmd: /opt/homebrew/bin/conda create --yes --quiet --prefix /Users/marlajeckstiess/Documents/ABI/Module_5/NGS/Exam/conda/env-d4a549ab39acddb753524a98395a0550 bioconda::entrez-direct=24.0
 # conda version: 25.5.1
 +bioconda/osx-arm64::entrez-direct-24.0-hd5f1084_0

@@ -21,22 +21,24 @@ process download_fasta {
 
     script:
     """
-    esearch -db nucleotide -query "${id}" | efetch fasta > "${id}.fasta"
+    esearch -db nucleotide -query "${id}" | efetch -format fasta > "${id}.fasta"
     """
 }
 
 // --------- Process: Concatenate all FASTA files ---------
 process merge_fasta {
     
+    publishDir "${params.output}", mode: 'copy'
+    
     input:
-    path fasta_folder
+    path all_fastas
 
     output:
     path "${params.combined}"
 
     script:
     """
-    cat ${fasta_folder}/*.fasta > ${params.combined}
+    cat ${all_fastas.join(' ')} > ${params.combined}
     """
 }
 
@@ -45,14 +47,14 @@ process run_mafft {
     conda 'conda-forge::mafft=7.526'
 
     input:
-    path multi_fasta
+    path input_fasta
 
     output:
     path "${params.aligned}"
 
     script:
     """
-    mafft --auto --thread -1 ${multi_fasta} > ${params.aligned}
+    mafft --auto --thread -1 ${input_fasta} > ${params.aligned}
     """
 }
 
@@ -60,10 +62,10 @@ process run_mafft {
 process trim_alignment {
     conda 'bioconda::trimal=1.5.0'
 
-    publishDir "${params.output}/trimmed", mode: 'copy', pattern: '*'
+    publishDir "${params.output}", mode: 'copy'
 
     input:
-    path mafft_output
+    path aligned_fasta
 
     output:
     path "${params.trimmed}"
@@ -71,18 +73,17 @@ process trim_alignment {
 
     script:
     """
-    trimal -in ${mafft_output} -out ${params.trimmed} -automated1 -htmlout ${params.report}
+    trimal -in ${aligned_fasta} -out ${params.trimmed} -automated1 -htmlout ${params.report}
     """
 }
 
 // --------- Workflow Definition ---------
 workflow {
-    download_fasta(params.query)
+    ref_fasta_ch = download_fasta(params.query)
+    local_fastas_ch = Channel.fromPath("${params.raw_dir}/*.fasta")
+    all_fastas_ch = ref_fasta_ch.mix(local_fastas_ch).collect()
 
-    def fasta_dir = Channel.fromPath(params.raw_dir, type: 'dir')
-    merge_fasta(fasta_dir)
-
+    merge_fasta(all_fastas_ch)
     run_mafft(merge_fasta.out)
-
     trim_alignment(run_mafft.out)
 }
